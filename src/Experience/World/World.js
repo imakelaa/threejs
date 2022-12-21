@@ -21,10 +21,10 @@ export default class World
     
         const geometry = new THREE.SphereGeometry( 1, 60, 40 );
         // invert the geometry on the x-axis so that all of the faces point inward
-        geometry.scale( - 1, 1, 1 );
+        geometry.scale( - 5, 5, 5 );
 
         // const texture = new THREE.VideoTexture( video );
-        const imageSource = './images/test.png'
+        const imageSource = './images/test.jpeg'
         const image = new Image()
         const texture = new THREE.Texture(image)
         image.addEventListener('load', () =>
@@ -33,7 +33,7 @@ export default class World
         })
         image.src = imageSource
         const material = new THREE.MeshBasicMaterial( { map: texture } );
-        // const material = new THREE.MeshBasicMaterial( { color: "red" } );
+        //const material = new THREE.MeshBasicMaterial( { color: "red" } );
 
         const mesh = new THREE.Mesh( geometry, material );
         mesh.position.y += 4
